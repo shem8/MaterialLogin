@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'material-login'
+
+    publishedGroupId = 'com.github.shem8'
+    libraryName = 'material-login'
+    artifact = 'material-login'
+
+    libraryDescription = 'Login view with material design'
+
+    siteUrl = 'https://github.com/shem8/MaterialLogin'
+    gitUrl = 'https://github.com/shem8/MaterialLogin.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'shem8'
+    developerName = 'Shem Magnezi'
+    developerEmail = 'smagnezi8@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+buildscript {
+    ext.buildTools = '23.0.1'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:cardview-v7:$buildTools"
+    compile "com.android.support:design:$buildTools"
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+

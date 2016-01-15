@@ -28,5 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "com.android.support:appcompat-v7:$buildTools"
     compile "com.android.support:design:$buildTools"
-    compile project(path: ':materiallogin')
+    compile project(path: ':material-login')
 }
