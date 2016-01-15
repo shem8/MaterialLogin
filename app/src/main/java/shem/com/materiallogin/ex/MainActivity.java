@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LoginView login = (LoginView) findViewById(R.id.login);
+        final LoginView login = (LoginView) findViewById(R.id.login);
         login.setListener(new LoginViewListener() {
             @Override
             public void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 registerPassRep.setError("");
 
-                Snackbar.make(null, "Register success!", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(login, "Register success!", Snackbar.LENGTH_LONG).show();
             }
 
             @Override
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 loginPass.setError("");
 
-                Snackbar.make(null, "Login success!", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(login, "Login success!", Snackbar.LENGTH_LONG).show();
             }
         });
     }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#3F51B5</color>
-    <color name="primaryDark">#303F9F</color>
-    <color name="accent">#FF4081</color>
-    <color name="error">#ff404d</color>
+    <color name="register">#FF4081</color>
+    <color name="login">#FFFFFF</color>
 </resources>

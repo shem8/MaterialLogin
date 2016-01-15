@@ -1,20 +1,21 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="MaterialLoginTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
 
-    <style name="AppTheme.SelectableItemTheme">
-        <item name="colorControlHighlight">@color/accent</item>
+    <style name="MaterialLoginTheme.SelectableItemTheme">
+        <item name="colorControlHighlight">@color/register</item>
     </style>
-    <style name="AppTheme.SelectableItemBackground">
-        <item name="android:theme">@style/AppTheme.SelectableItemTheme</item>
+    <style name="MaterialLoginTheme.SelectableItemBackground">
+        <item name="android:theme">@style/MaterialLoginTheme.SelectableItemTheme</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
 
-    <style name="AppTheme.TextAppearanceDark" parent="TextAppearance.AppCompat">
-        <item name="colorControlNormal">@color/background_material_light</item>
-        <item name="android:textColorHint">@color/bright_foreground_disabled_material_dark</item>
-        <item name="colorControlActivated">@color/background_material_light</item>
-        <item name="colorControlHighlight">@color/background_material_light</item>
+    <style name="MaterialLoginTheme.TextAppearanceRegister">
+        <item name="android:textColor">@color/login</item>
+        <item name="colorControlNormal">@color/login</item>
+        <item name="android:textColorHint">@color/login</item>
+        <item name="colorControlActivated">@color/login</item>
+        <item name="colorControlHighlight">@color/login</item>
     </style>
 </resources>
