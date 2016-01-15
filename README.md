@@ -41,6 +41,7 @@ login.setListener(new LoginViewListener() {
 });
 ```
 
+You can also fork the project and see the example app.
 
 
 Download
