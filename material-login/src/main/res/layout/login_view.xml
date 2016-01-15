@@ -18,7 +18,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:background="@color/login">
 
             <TextView
                 android:id="@+id/login_title"
@@ -33,7 +34,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_user"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,7 +47,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_pass"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,13 +104,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:text="REGISTER"
                     android:textSize="24sp"
-                    android:textColor="@color/background_material_light"
+                    android:textColor="@color/login"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/register_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_white_24dp"
+                    android:tint="@color/login"
                     android:rotation="45"/>
             </LinearLayout>
 
@@ -180,5 +184,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
         app:layout_anchorGravity="right|end|top"
         app:layout_anchor="@id/login_window"
-        android:src="@drawable/ic_add_white_24dp" />
+        android:src="@drawable/ic_add_white_24dp"
+        app:backgroundTint="@color/register"
+        android:tint="@color/login"/>
 </android.support.design.widget.CoordinatorLayout>

@@ -18,4 +18,12 @@
         <item name="colorControlActivated">@color/login</item>
         <item name="colorControlHighlight">@color/login</item>
     </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceLogin">
+        <item name="android:textColor">@color/register</item>
+        <item name="colorControlNormal">@color/register</item>
+        <item name="android:textColorHint">@color/register</item>
+        <item name="colorControlActivated">@color/register</item>
+        <item name="colorControlHighlight">@color/register</item>
+    </style>
 </resources>
