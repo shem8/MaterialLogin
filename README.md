@@ -27,18 +27,18 @@ Add the LoginView to your layout
 
 Then set your `LoginViewListener` to the view in code to handle register and login events:
 ```java
-        final LoginView login = (LoginView) findViewById(R.id.login);
-        login.setListener(new LoginViewListener() {
-            @Override
-            public void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep) {
-                //Handle register
-            }
+final LoginView login = (LoginView) findViewById(R.id.login);
+login.setListener(new LoginViewListener() {
+    @Override
+    public void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep) {
+        //Handle register
+    }
 
-            @Override
-            public void onLogin(TextInputLayout loginUser, TextInputLayout loginPass) {
-                //Handle login
-            }
-        });
+    @Override
+    public void onLogin(TextInputLayout loginUser, TextInputLayout loginPass) {
+        //Handle login
+    }
+});
 ```
 
 
@@ -68,8 +68,8 @@ I first saw this design by the graet [Boris Borisov][1] and thought it will be n
 
 
 
-Contact
---------
+Contact Me
+-----------
 
 Pull requests are more than welcome, I'm planning to add lots of optins to customize the view, and hope to do this soon.
 You can also contact me by mail: smagnezi8@gmail.com
