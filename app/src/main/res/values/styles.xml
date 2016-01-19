@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="login">@color/login_default</item>
+        <item name="register">@color/register_default</item>
+        <item name="login_error">@color/login_error_default</item>
+        <item name="register_error">@color/register_error_default</item>
     </style>
 
 </resources>

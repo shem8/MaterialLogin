@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="register">#FF4081</color>
-    <color name="login">#FFFFFF</color>
+    <color name="login_default">#FFFFFF</color>
+    <color name="register_default">#FF4081</color>
+    <color name="login_error_default">#ff5151</color>
+    <color name="register_error_default">#ffcdce</color>
+
+
+    <attr name="register" format="reference" />
+    <attr name="login" format="reference" />
+    <attr name="register_error" format="reference" />
+    <attr name="login_error" format="reference" />
 </resources>

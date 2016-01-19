@@ -18,7 +18,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:background="?attr/login">
 
             <TextView
                 android:id="@+id/login_title"
@@ -26,14 +27,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:text="LOGIN"
                 android:textSize="24sp"
-                android:textColor="@color/register"
+                android:textColor="?attr/register"
                 android:layout_marginBottom="20dp"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_user"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,7 +48,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_pass"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +68,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/login_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/register"
+                android:textColor="?attr/register"
                 android:text="GO"
                 android:textSize="20sp"
                 android:padding="10dp"
@@ -87,7 +92,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp"
-            android:background="@color/register">
+            android:background="?attr/register">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,13 +106,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:text="REGISTER"
                     android:textSize="24sp"
-                    android:textColor="@color/background_material_light"
+                    android:textColor="?attr/login"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/register_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_white_24dp"
+                    android:tint="?attr/login"
                     android:rotation="45"/>
             </LinearLayout>
 
@@ -116,12 +122,13 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_user"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Name"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -130,13 +137,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_pass"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:inputType="textPassword"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Password"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -145,13 +153,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_pass_rep"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:inputType="textPassword"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Repeat Password"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -159,12 +168,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/login">
+                android:background="?attr/login">
                 <TextView
                     android:id="@+id/register_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/register"
+                    android:textColor="?attr/register"
                     android:text="NEXT"
                     android:textSize="20sp"
                     android:padding="10dp"
@@ -180,5 +189,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
         app:layout_anchorGravity="right|end|top"
         app:layout_anchor="@id/login_window"
-        android:src="@drawable/ic_add_white_24dp" />
+        android:src="@drawable/ic_add_white_24dp"
+        app:backgroundTint="?attr/register"
+        android:tint="?attr/login"/>
 </android.support.design.widget.CoordinatorLayout>

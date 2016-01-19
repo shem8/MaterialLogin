@@ -4,7 +4,7 @@
     </style>
 
     <style name="MaterialLoginTheme.SelectableItemTheme">
-        <item name="colorControlHighlight">@color/register</item>
+        <item name="colorControlHighlight">?attr/register</item>
     </style>
     <style name="MaterialLoginTheme.SelectableItemBackground">
         <item name="android:theme">@style/MaterialLoginTheme.SelectableItemTheme</item>
@@ -12,10 +12,28 @@
     </style>
 
     <style name="MaterialLoginTheme.TextAppearanceRegister">
-        <item name="android:textColor">@color/login</item>
-        <item name="colorControlNormal">@color/login</item>
-        <item name="android:textColorHint">@color/login</item>
-        <item name="colorControlActivated">@color/login</item>
-        <item name="colorControlHighlight">@color/login</item>
+        <item name="android:textColor">?attr/login</item>
+        <item name="colorControlNormal">?attr/login</item>
+        <item name="android:textColorHint">?attr/login</item>
+        <item name="colorControlActivated">?attr/login</item>
+        <item name="colorControlHighlight">?attr/login</item>
+    </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceLogin">
+        <item name="android:textColor">?attr/register</item>
+        <item name="colorControlNormal">?attr/register</item>
+        <item name="android:textColorHint">?attr/register</item>
+        <item name="colorControlActivated">?attr/register</item>
+        <item name="colorControlHighlight">?attr/register</item>
+    </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceLoginError" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/login_error</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceRegisterError" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/register_error</item>
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>
