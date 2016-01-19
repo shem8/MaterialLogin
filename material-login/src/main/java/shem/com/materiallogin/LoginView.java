@@ -43,18 +43,15 @@ public class LoginView extends FrameLayout {
     private CardView registerView;
 
     public LoginView(Context context) {
-        super(context);
-        init(context);
+        this(context, null);
     }
 
     public LoginView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs, 0);
     }
 
     public LoginView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     public LoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {

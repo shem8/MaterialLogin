@@ -19,7 +19,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp"
-            android:background="@color/login">
+            android:background="?attr/login">
 
             <TextView
                 android:id="@+id/login_title"
@@ -27,7 +27,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:text="LOGIN"
                 android:textSize="24sp"
-                android:textColor="@color/register"
+                android:textColor="?attr/register"
                 android:layout_marginBottom="20dp"/>
 
             <android.support.design.widget.TextInputLayout
@@ -66,7 +66,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/login_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/register"
+                android:textColor="?attr/register"
                 android:text="GO"
                 android:textSize="20sp"
                 android:padding="10dp"
@@ -90,7 +90,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp"
-            android:background="@color/register">
+            android:background="?attr/register">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,14 +104,14 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:text="REGISTER"
                     android:textSize="24sp"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:layout_weight="1"/>
                 <ImageView
                     android:id="@+id/register_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_add_white_24dp"
-                    android:tint="@color/login"
+                    android:tint="?attr/login"
                     android:rotation="45"/>
             </LinearLayout>
 
@@ -125,7 +125,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Name"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -140,7 +140,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:inputType="textPassword"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Password"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -155,7 +155,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:inputType="textPassword"
-                    android:textColor="@color/login"
+                    android:textColor="?attr/login"
                     android:hint="Repeat Password"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -163,12 +163,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/login">
+                android:background="?attr/login">
                 <TextView
                     android:id="@+id/register_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/register"
+                    android:textColor="?attr/register"
                     android:text="NEXT"
                     android:textSize="20sp"
                     android:padding="10dp"
@@ -185,6 +185,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         app:layout_anchorGravity="right|end|top"
         app:layout_anchor="@id/login_window"
         android:src="@drawable/ic_add_white_24dp"
-        app:backgroundTint="@color/register"
-        android:tint="@color/login"/>
+        app:backgroundTint="?attr/register"
+        android:tint="?attr/login"/>
 </android.support.design.widget.CoordinatorLayout>
