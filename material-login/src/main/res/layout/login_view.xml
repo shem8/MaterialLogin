@@ -35,7 +35,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_user"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,7 +49,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/login_pass"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +122,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_user"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -134,7 +137,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_pass"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -149,7 +153,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:id="@+id/register_pass_rep"
                 android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister">
+                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
+                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

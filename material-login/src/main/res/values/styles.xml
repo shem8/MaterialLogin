@@ -26,4 +26,14 @@
         <item name="colorControlActivated">?attr/register</item>
         <item name="colorControlHighlight">?attr/register</item>
     </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceLoginError" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/login_error</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MaterialLoginTheme.TextAppearanceRegisterError" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/register_error</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

@@ -9,6 +9,8 @@
 
         <item name="login">@color/login_default</item>
         <item name="register">@color/register_default</item>
+        <item name="login_error">@color/login_error_default</item>
+        <item name="register_error">@color/register_error_default</item>
     </style>
 
 </resources>
