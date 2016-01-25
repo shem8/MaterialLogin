@@ -49,12 +49,12 @@ Download
 
 Grab via Gradle:
 ```groovy
-compile 'com.github.shem:material-login:1.0.0'
+compile 'com.github.shem8:material-login:1.0.0'
 ```
 or Maven:
 ```xml
 <dependency>
-  <groupId>com.github.shem</groupId>
+  <groupId>com.github.shem8</groupId>
   <artifactId>material-login</artifactId>
   <version>1.0.0</version>
 </dependency>
