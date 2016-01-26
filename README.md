@@ -65,9 +65,11 @@ You can also fork the project and see the example app.
 Cusomize
 --------
 
-You can change the view colors by ovveride it in you colors.xml:
+![](custom.gif)
 
-```
+You can change the view colors by override it in you colors.xml:
+
+```xml
     <color name="materail_login_login_color">#000000</color>
     <color name="materail_login_register_color">#00ff37</color>
     <color name="materail_login_login_error_color">#ffbebe</color>
@@ -88,6 +90,7 @@ You can also change texts and the fab icon by setting LoginView attributes:
 |registerRepeatPasswordHint | Repeat Password|
 |registerActionText | NEXT|
 |registerIcon | ![](https://github.com/google/material-design-icons/blob/master/content/drawable-mdpi/ic_add_black_24dp.png)|
+
 
 
 Thanks
