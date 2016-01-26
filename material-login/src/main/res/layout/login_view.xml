@@ -25,7 +25,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/login_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOGIN"
+                android:text="@string/login"
                 android:textSize="24sp"
                 android:textColor="@color/materail_login_register_color"
                 android:layout_marginBottom="20dp"/>
@@ -41,7 +41,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:hint="Name"/>
+                    android:hint="@string/name"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -56,7 +56,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:inputType="textPassword"
-                android:hint="Password"/>
+                android:hint="@string/password"/>
         </android.support.design.widget.TextInputLayout>
 
             <FrameLayout
@@ -69,7 +69,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/materail_login_register_color"
-                android:text="GO"
+                android:text="@string/go"
                 android:textSize="20sp"
                 android:padding="10dp"
                 style="@style/MaterialLoginTheme.SelectableItemBackground"/>
@@ -104,7 +104,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/register_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="REGISTER"
+                    android:text="@string/register"
                     android:textSize="24sp"
                     android:textColor="@color/materail_login_login_color"
                     android:layout_weight="1"/>
@@ -129,7 +129,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textColor="@color/materail_login_login_color"
-                    android:hint="Name"/>
+                    android:hint="@string/name"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -145,7 +145,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:textSize="20sp"
                     android:inputType="textPassword"
                     android:textColor="@color/materail_login_login_color"
-                    android:hint="Password"/>
+                    android:hint="@string/password"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -161,7 +161,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:textSize="20sp"
                     android:inputType="textPassword"
                     android:textColor="@color/materail_login_login_color"
-                    android:hint="Repeat Password"/>
+                    android:hint="@string/repeat_password"/>
             </android.support.design.widget.TextInputLayout>
 
             <FrameLayout
@@ -174,7 +174,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/materail_login_register_color"
-                    android:text="NEXT"
+                    android:text="@string/next"
                     android:textSize="20sp"
                     android:padding="10dp"
                     android:background="?attr/selectableItemBackground"

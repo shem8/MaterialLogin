@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -56,10 +57,10 @@ public class LoginView extends FrameLayout {
 
     public LoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context);
+        init(context, attrs);
     }
 
-    private void init(Context context) {
+    private void init(Context context, AttributeSet attrs) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.login_view, this, true);
 
@@ -107,6 +108,64 @@ public class LoginView extends FrameLayout {
                 animateLogin();
             }
         });
+
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.MaterialLoginView,
+                0, 0);
+
+        try {
+            String string = a.getString(R.styleable.MaterialLoginView_loginTitle);
+            if (string != null) {
+                loginTitle.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginHint);
+            if (string != null) {
+                loginUser.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginPasswordHint);
+            if (string != null) {
+                loginPass.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginActionText);
+            if (string != null) {
+                loginBtn.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerTitle);
+            if (string != null) {
+                registerTitle.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerHint);
+            if (string != null) {
+                registerUser.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerPasswordHint);
+            if (string != null) {
+                registerPass.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerRepeatPasswordHint);
+            if (string != null) {
+                registerPassRep.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerActionText);
+            if (string != null) {
+                registerBtn.setText(string);
+            }
+
+            registerFab.setImageResource(
+                    a.getResourceId(R.styleable.MaterialLoginView_registerIcon, R.drawable.ic_add_white_24dp));
+        } finally {
+            a.recycle();
+        }
     }
 
     private void animateRegister() {
