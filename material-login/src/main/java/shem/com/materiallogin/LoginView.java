@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -43,26 +44,23 @@ public class LoginView extends FrameLayout {
     private CardView registerView;
 
     public LoginView(Context context) {
-        super(context);
-        init(context);
+        this(context, null);
     }
 
     public LoginView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs, 0);
     }
 
     public LoginView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     public LoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context);
+        init(context, attrs);
     }
 
-    private void init(Context context) {
+    private void init(Context context, AttributeSet attrs) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.login_view, this, true);
 
@@ -110,6 +108,64 @@ public class LoginView extends FrameLayout {
                 animateLogin();
             }
         });
+
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.MaterialLoginView,
+                0, 0);
+
+        try {
+            String string = a.getString(R.styleable.MaterialLoginView_loginTitle);
+            if (string != null) {
+                loginTitle.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginHint);
+            if (string != null) {
+                loginUser.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginPasswordHint);
+            if (string != null) {
+                loginPass.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_loginActionText);
+            if (string != null) {
+                loginBtn.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerTitle);
+            if (string != null) {
+                registerTitle.setText(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerHint);
+            if (string != null) {
+                registerUser.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerPasswordHint);
+            if (string != null) {
+                registerPass.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerRepeatPasswordHint);
+            if (string != null) {
+                registerPassRep.setHint(string);
+            }
+
+            string = a.getString(R.styleable.MaterialLoginView_registerActionText);
+            if (string != null) {
+                registerBtn.setText(string);
+            }
+
+            registerFab.setImageResource(
+                    a.getResourceId(R.styleable.MaterialLoginView_registerIcon, R.drawable.ic_add_white_24dp));
+        } finally {
+            a.recycle();
+        }
     }
 
     private void animateRegister() {
@@ -179,7 +235,7 @@ public class LoginView extends FrameLayout {
                 ObjectAnimator animX = ObjectAnimator.ofFloat(registerFab, "scaleX", 0F, 1F);
                 ObjectAnimator animY = ObjectAnimator.ofFloat(registerFab, "scaleY", 0F, 1F);
                 ObjectAnimator alpha = ObjectAnimator.ofFloat(registerFab, "alpha", 0F, 1F);
-                ObjectAnimator rotation = ObjectAnimator.ofFloat(registerFab, "rotation", 0F, 90F);
+                ObjectAnimator rotation = ObjectAnimator.ofFloat(registerFab, "rotation", 90F, 0F);
                 AnimatorSet animator = new AnimatorSet();
                 animator.playTogether(animX, animY, alpha, rotation);
                 animator.setInterpolator(new AccelerateInterpolator());

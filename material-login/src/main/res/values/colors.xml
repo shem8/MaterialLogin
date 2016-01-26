@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="register">#FF4081</color>
-    <color name="login">#FFFFFF</color>
+    <color name="materail_login_login_color">#FFFFFF</color>
+    <color name="materail_login_register_color">#FF4081</color>
+    <color name="materail_login_login_error_color">#ff5151</color>
+    <color name="materail_login_register_error_color">#ffcdce</color>
 </resources>

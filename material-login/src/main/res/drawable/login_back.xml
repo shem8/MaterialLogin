@@ -4,5 +4,5 @@
     <solid android:color="@android:color/transparent" />
     <stroke
         android:width="2dp"
-        android:color="@color/register" />
+        android:color="@color/materail_login_register_color" />
 </shape>
