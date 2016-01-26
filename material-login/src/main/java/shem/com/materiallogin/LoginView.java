@@ -235,7 +235,7 @@ public class LoginView extends FrameLayout {
                 ObjectAnimator animX = ObjectAnimator.ofFloat(registerFab, "scaleX", 0F, 1F);
                 ObjectAnimator animY = ObjectAnimator.ofFloat(registerFab, "scaleY", 0F, 1F);
                 ObjectAnimator alpha = ObjectAnimator.ofFloat(registerFab, "alpha", 0F, 1F);
-                ObjectAnimator rotation = ObjectAnimator.ofFloat(registerFab, "rotation", 0F, 90F);
+                ObjectAnimator rotation = ObjectAnimator.ofFloat(registerFab, "rotation", 90F, 0F);
                 AnimatorSet animator = new AnimatorSet();
                 animator.playTogether(animX, animY, alpha, rotation);
                 animator.setInterpolator(new AccelerateInterpolator());
