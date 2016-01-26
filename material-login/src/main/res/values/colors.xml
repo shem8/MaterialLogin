@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="login_default">#FFFFFF</color>
-    <color name="register_default">#FF4081</color>
-    <color name="login_error_default">#ff5151</color>
-    <color name="register_error_default">#ffcdce</color>
-
-
-    <attr name="register" format="reference" />
-    <attr name="login" format="reference" />
-    <attr name="register_error" format="reference" />
-    <attr name="login_error" format="reference" />
+    <color name="materail_login_login_color">#FFFFFF</color>
+    <color name="materail_login_register_color">#FF4081</color>
+    <color name="materail_login_login_error_color">#ff5151</color>
+    <color name="materail_login_register_error_color">#ffcdce</color>
 </resources>
