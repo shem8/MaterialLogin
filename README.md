@@ -2,7 +2,7 @@
 
 A material-designed login (and register) view
 
-![](example.gif)
+![](art/example.gif)
 
 
 Download
@@ -65,7 +65,7 @@ You can also fork the project and see the example app.
 Cusomize
 --------
 
-![](custom.gif)
+![](art/custom.gif)
 
 You can change the view colors by override it in you colors.xml:
 
@@ -124,6 +124,6 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
-    
+
+
 [1]: http://www.materialup.com/posts/compact-login
