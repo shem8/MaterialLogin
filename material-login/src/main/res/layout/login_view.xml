@@ -1,195 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
+    <include
         android:id="@+id/login_window"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        card_view:cardCornerRadius="10dp">
+        layout="@layout/login_layout" />
 
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp"
-            android:background="@color/materail_login_login_color">
-
-            <TextView
-                android:id="@+id/login_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:textSize="24sp"
-                android:textColor="@color/materail_login_register_color"
-                android:layout_marginBottom="20dp"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/login_user"
-                android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
-                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:hint="@string/name"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/login_pass"
-                android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceLogin"
-                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:inputType="textPassword"
-                android:hint="@string/password"/>
-        </android.support.design.widget.TextInputLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/login_back">
-            <TextView
-                android:id="@+id/login_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/materail_login_register_color"
-                android:text="@string/go"
-                android:textSize="20sp"
-                android:padding="10dp"
-                style="@style/MaterialLoginTheme.SelectableItemBackground"/>
-            </FrameLayout>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-
-    <android.support.v7.widget.CardView
+    <include
         android:id="@+id/register_window"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        card_view:cardCornerRadius="10dp"
-        android:visibility="gone">
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp"
-            android:background="@color/materail_login_register_color">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/register_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/register"
-                    android:textSize="24sp"
-                    android:textColor="@color/materail_login_login_color"
-                    android:layout_weight="1"/>
-                <ImageView
-                    android:id="@+id/register_cancel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    android:tint="@color/materail_login_login_color"
-                    android:rotation="45"/>
-            </LinearLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/register_user"
-                android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
-                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/materail_login_login_color"
-                    android:hint="@string/name"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/register_pass"
-                android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
-                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:inputType="textPassword"
-                    android:textColor="@color/materail_login_login_color"
-                    android:hint="@string/password"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/register_pass_rep"
-                android:layout_marginBottom="20dp"
-                app:theme="@style/MaterialLoginTheme.TextAppearanceRegister"
-                app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceRegisterError">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:inputType="textPassword"
-                    android:textColor="@color/materail_login_login_color"
-                    android:hint="@string/repeat_password"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/materail_login_login_color">
-                <TextView
-                    android:id="@+id/register_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/materail_login_register_color"
-                    android:text="@string/next"
-                    android:textSize="20sp"
-                    android:padding="10dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:gravity="center_horizontal" />
-            </FrameLayout>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+        layout="@layout/register_layout" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/register_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_anchorGravity="right|end|top"
-        app:layout_anchor="@id/login_window"
         android:src="@drawable/ic_add_white_24dp"
-        app:backgroundTint="@color/materail_login_register_color"
-        android:tint="@color/materail_login_login_color"/>
+        android:tint="@color/material_login_login_color"
+        app:backgroundTint="@color/material_login_register_color"
+        app:layout_anchor="@id/login_window"
+        app:layout_anchorGravity="right|end|top" />
+
 </android.support.design.widget.CoordinatorLayout>
