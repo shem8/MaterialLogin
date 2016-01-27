@@ -84,11 +84,13 @@ You can also change texts and the fab icon by setting LoginView attributes:
 |loginHint | Name|
 |loginPasswordHint | Password|
 |loginActionText | GO|
+|loginTextColor | #000000|
 |registerTitle | Register|
 |registerHint | Name|
 |registerPasswordHint | Password|
 |registerRepeatPasswordHint | Repeat Password|
 |registerActionText | NEXT|
+|registerTextColor | #000000|
 |registerIcon | ![](https://github.com/google/material-design-icons/blob/master/content/drawable-mdpi/ic_add_black_24dp.png)|
 
 
