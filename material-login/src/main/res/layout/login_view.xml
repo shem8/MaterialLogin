@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add_white_24dp"
-        android:tint="@color/materail_login_login_color"
-        app:backgroundTint="@color/materail_login_register_color"
+        android:tint="@color/material_login_login_color"
+        app:backgroundTint="@color/material_login_register_color"
         app:layout_anchor="@id/login_window"
         app:layout_anchorGravity="right|end|top" />
 

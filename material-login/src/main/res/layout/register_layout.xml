@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/materail_login_register_color"
+        android:background="@color/material_login_register_color"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/register"
-                android:textColor="@color/materail_login_login_color"
+                android:textColor="@color/material_login_login_color"
                 android:textSize="24sp" />
 
             <ImageView
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:rotation="45"
                 android:src="@drawable/ic_add_white_24dp"
-                android:tint="@color/materail_login_login_color" />
+                android:tint="@color/material_login_login_color" />
         </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
-                android:textColor="@color/materail_login_login_color"
+                android:textColor="@color/material_login_login_color"
                 android:textSize="20sp" />
         </android.support.design.widget.TextInputLayout>
 
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColor="@color/materail_login_login_color"
+                android:textColor="@color/material_login_login_color"
                 android:textSize="20sp" />
         </android.support.design.widget.TextInputLayout>
 
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/repeat_password"
                 android:inputType="textPassword"
-                android:textColor="@color/materail_login_login_color"
+                android:textColor="@color/material_login_login_color"
                 android:textSize="20sp" />
         </android.support.design.widget.TextInputLayout>
 
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/materail_login_login_color">
+            android:background="@color/material_login_login_color">
 
             <TextView
                 android:id="@+id/register_btn"
@@ -105,7 +105,7 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:text="@string/next"
-                android:textColor="@color/materail_login_register_color"
+                android:textColor="@color/material_login_register_color"
                 android:textSize="20sp" />
         </FrameLayout>
     </LinearLayout>
