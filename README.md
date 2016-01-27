@@ -70,10 +70,10 @@ Cusomize
 You can change the view colors by override it in you colors.xml:
 
 ```xml
-    <color name="materail_login_login_color">#000000</color>
-    <color name="materail_login_register_color">#00ff37</color>
-    <color name="materail_login_login_error_color">#ffbebe</color>
-    <color name="materail_login_register_error_color">#600002</color>
+    <color name="material_login_login_color">#000000</color>
+    <color name="material_login_register_color">#00ff37</color>
+    <color name="material_login_login_error_color">#ffbebe</color>
+    <color name="material_login_register_error_color">#600002</color>
 ```
 
 You can also change texts and the fab icon by setting LoginView attributes:
