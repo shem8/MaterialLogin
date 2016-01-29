@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/login_window"
-        layout="@layout/login_layout" />
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/register_window"
-        layout="@layout/register_layout" />
+        <include
+            android:id="@+id/login_window"
+            layout="@layout/login_layout" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/register_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_white_24dp"
-        android:tint="@color/material_login_login_color"
-        app:backgroundTint="@color/material_login_register_color"
-        app:layout_anchor="@id/login_window"
-        app:layout_anchorGravity="right|end|top" />
+        <include
+            android:id="@+id/register_window"
+            layout="@layout/register_layout" />
 
-</android.support.design.widget.CoordinatorLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/register_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_white_24dp"
+            android:tint="@color/material_login_login_color"
+            app:backgroundTint="@color/material_login_register_color"
+            app:layout_anchor="@id/login_window"
+            app:layout_anchorGravity="right|end|top" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</io.codetail.widget.RevealFrameLayout>

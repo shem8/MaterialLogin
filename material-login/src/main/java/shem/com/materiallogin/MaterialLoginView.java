@@ -4,11 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
+import android.graphics.RectF;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
@@ -16,12 +19,14 @@ import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import io.codetail.animation.SupportAnimator;
+import io.codetail.animation.ViewAnimationUtils;
 
 /**
  * Created by shem on 1/15/16.
@@ -53,9 +58,11 @@ public class MaterialLoginView extends FrameLayout {
     }
 
     public MaterialLoginView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public MaterialLoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
@@ -180,7 +187,8 @@ public class MaterialLoginView extends FrameLayout {
 
     private void animateRegister() {
         Path path = new Path();
-        path.addArc(-241F, -40F, 41F, 242F, -45F, 180F);
+        RectF rect = new RectF(-241F, -40F, 41F, 242F);
+        path.addArc(rect, -45F, 180F);
         path.lineTo(-0F, -50F);
         FabAnimation fabAnimation = new FabAnimation(path);
         fabAnimation.setDuration(400);
@@ -189,8 +197,7 @@ public class MaterialLoginView extends FrameLayout {
         fabAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                Animator animator = ViewAnimationUtils.createCircularReveal(
-                        registerView, registerView.getWidth() - 250, 400, 0f, 2F * registerView.getHeight());
+                Animator animator = getCircularRevealAnimation(registerView, registerView.getWidth() - 250, 400, 0f, 2F * registerView.getHeight());
                 animator.setDuration(700);
                 animator.setStartDelay(200);
                 animator.addListener(new AnimatorListenerAdapter() {
@@ -220,12 +227,16 @@ public class MaterialLoginView extends FrameLayout {
         registerFab.startAnimation(fabAnimation);
     }
 
+    private Animator getCircularRevealAnimation(CardView registerView, int centerX, int centerY, float startRadius, float endRadius) {
+        return ViewAnimationUtils.createCircularReveal(
+                registerView, centerX, centerY, startRadius, endRadius);
+    }
+
 
     private void animateLogin() {
         registerCancel.animate().scaleX(0F).scaleY(0F).alpha(0F).rotation(90F).
                 setDuration(200).setInterpolator(new AccelerateInterpolator()).start();
-        Animator animator = ViewAnimationUtils.createCircularReveal(
-                registerView, registerView.getWidth() / 2, registerView.getHeight() / 2, 1f * registerView.getHeight(), 0F);
+        Animator animator = getCircularRevealAnimation(registerView, registerView.getWidth() / 2, registerView.getHeight() / 2, 1f * registerView.getHeight(), 0F);
         animator.setDuration(500);
         animator.setStartDelay(100);
         animator.addListener(new AnimatorListenerAdapter() {
