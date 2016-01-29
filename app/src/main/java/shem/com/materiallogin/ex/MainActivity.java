@@ -4,10 +4,9 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-import shem.com.materiallogin.LoginView;
-import shem.com.materiallogin.LoginViewListener;
+import shem.com.materiallogin.MaterialLoginView;
+import shem.com.materiallogin.MaterialLoginViewListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final LoginView login = (LoginView) findViewById(R.id.login);
-        login.setListener(new LoginViewListener() {
+        final MaterialLoginView login = (MaterialLoginView) findViewById(R.id.login);
+        login.setListener(new MaterialLoginViewListener() {
             @Override
             public void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep) {
                 String user = registerUser.getEditText().getText().toString();

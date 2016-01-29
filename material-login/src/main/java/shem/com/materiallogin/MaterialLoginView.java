@@ -25,9 +25,9 @@ import android.widget.TextView;
 /**
  * Created by shem on 1/15/16.
  */
-public class LoginView extends FrameLayout {
+public class MaterialLoginView extends FrameLayout {
 
-    private LoginViewListener listener;
+    private MaterialLoginViewListener listener;
 
     private TextView registerBtn;
     private TextView registerTitle;
@@ -43,19 +43,19 @@ public class LoginView extends FrameLayout {
     private CardView loginView;
     private CardView registerView;
 
-    public LoginView(Context context) {
+    public MaterialLoginView(Context context) {
         this(context, null);
     }
 
-    public LoginView(Context context, AttributeSet attrs) {
+    public MaterialLoginView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LoginView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MaterialLoginView(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
     }
 
-    public LoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public MaterialLoginView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
@@ -246,7 +246,7 @@ public class LoginView extends FrameLayout {
         animator.start();
     }
 
-    public void setListener(LoginViewListener listener) {
+    public void setListener(MaterialLoginViewListener listener) {
         this.listener = listener;
     }
 
