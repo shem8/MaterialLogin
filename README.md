@@ -35,17 +35,17 @@ Add the LoginView to your layout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <shem.com.materiallogin.LoginView
+    <shem.com.materiallogin.MaterialLoginView
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>
 ```
 
-Then set your `LoginViewListener` to the view in code to handle register and login events:
+Then set your `MaterialLoginViewListener` to the view in code to handle register and login events:
 ```java
-final LoginView login = (LoginView) findViewById(R.id.login);
-login.setListener(new LoginViewListener() {
+final MaterialLoginView login = (MaterialLoginView) findViewById(R.id.login);
+login.setListener(new MaterialLoginViewListener() {
     @Override
     public void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep) {
         //Handle register
