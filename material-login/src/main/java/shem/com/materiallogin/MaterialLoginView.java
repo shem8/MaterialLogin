@@ -11,6 +11,7 @@ import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -161,6 +162,15 @@ public class MaterialLoginView extends FrameLayout {
                 registerBtn.setText(string);
             }
 
+            int color = a.getColor(R.styleable.MaterialLoginView_loginTextColor, ContextCompat.getColor(getContext(), R.color.material_login_login_text_color));
+            loginUser.getEditText().setTextColor(color);
+            loginPass.getEditText().setTextColor(color);
+
+            color = a.getColor(R.styleable.MaterialLoginView_registerTextColor, ContextCompat.getColor(getContext(), R.color.material_login_register_text_color));
+            registerUser.getEditText().setTextColor(color);
+            registerPass.getEditText().setTextColor(color);
+            registerPassRep.getEditText().setTextColor(color);
+
             registerFab.setImageResource(
                     a.getResourceId(R.styleable.MaterialLoginView_registerIcon, R.drawable.ic_add_white_24dp));
         } finally {
@@ -203,7 +213,8 @@ public class MaterialLoginView extends FrameLayout {
             }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
         });
 
         registerFab.startAnimation(fabAnimation);
@@ -256,11 +267,11 @@ public class MaterialLoginView extends FrameLayout {
 
         public FabAnimation(Path path) {
             measure = new PathMeasure(path, false);
-            pos = new float[] {0, 0};
+            pos = new float[]{0, 0};
         }
 
         protected void applyTransformation(float interpolatedTime, Transformation t) {
-            measure.getPosTan(measure.getLength() * interpolatedTime, pos,null);
+            measure.getPosTan(measure.getLength() * interpolatedTime, pos, null);
             Matrix matrix = t.getMatrix();
             matrix.setTranslate(pos[0], pos[1]);
             matrix.preRotate(interpolatedTime * 45);

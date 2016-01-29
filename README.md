@@ -2,7 +2,24 @@
 
 A material-designed login (and register) view
 
-![](example.gif)
+![](art/example.gif)
+
+
+Download
+--------
+
+Grab via Gradle:
+```groovy
+compile 'com.github.shem8:material-login:1.1.0'
+```
+or Maven:
+```xml
+<dependency>
+  <groupId>com.github.shem8</groupId>
+  <artifactId>material-login</artifactId>
+  <version>1.1.0</version>
+</dependency>
+```
 
 
 
@@ -44,21 +61,37 @@ login.setListener(new LoginViewListener() {
 You can also fork the project and see the example app.
 
 
-Download
+
+Cusomize
 --------
 
-Grab via Gradle:
-```groovy
-compile 'com.github.shem:material-login:1.0.0'
-```
-or Maven:
+![](art/custom.gif)
+
+You can change the view colors by override it in you colors.xml:
+
 ```xml
-<dependency>
-  <groupId>com.github.shem</groupId>
-  <artifactId>material-login</artifactId>
-  <version>1.0.0</version>
-</dependency>
+    <color name="material_login_login_color">#000000</color>
+    <color name="material_login_register_color">#00ff37</color>
+    <color name="material_login_login_error_color">#ffbebe</color>
+    <color name="material_login_register_error_color">#600002</color>
 ```
+
+You can also change texts and the fab icon by setting LoginView attributes:
+
+|Attribute name | Default value|
+|-------------- | -------------|
+|loginTitle | Login|
+|loginHint | Name|
+|loginPasswordHint | Password|
+|loginActionText | GO|
+|loginTextColor | #000000|
+|registerTitle | Register|
+|registerHint | Name|
+|registerPasswordHint | Password|
+|registerRepeatPasswordHint | Repeat Password|
+|registerActionText | NEXT|
+|registerTextColor | #000000|
+|registerIcon | ![](https://github.com/google/material-design-icons/blob/master/content/drawable-mdpi/ic_add_black_24dp.png)|
 
 
 
@@ -93,6 +126,6 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
-    
+
+
 [1]: http://www.materialup.com/posts/compact-login

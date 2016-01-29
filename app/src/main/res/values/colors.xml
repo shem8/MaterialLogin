@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="materail_login_login_color">#000000</color>
-    <color name="materail_login_register_color">#00ff37</color>
-    <color name="materail_login_login_error_color">#ffbebe</color>
-    <color name="materail_login_register_error_color">#600002</color>
+    <color name="material_login_login_color">#000000</color>
+    <color name="material_login_register_color">#00ff37</color>
+    <color name="material_login_login_error_color">#ffbebe</color>
+    <color name="material_login_register_error_color">#600002</color>
 </resources>
