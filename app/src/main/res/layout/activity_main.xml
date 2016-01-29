@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#E3E3E3">
 
-    <shem.com.materiallogin.LoginView
+    <shem.com.materiallogin.MaterialLoginView
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
