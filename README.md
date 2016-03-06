@@ -21,6 +21,25 @@ or Maven:
 </dependency>
 ```
 
+You should also add [CircularReveal lib](https://github.com/ozodrukh/CircularReveal) for 2.3 support- first add remote maven url
+
+```groovy
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+```
+    
+then add a library dependency
+
+```groovy
+    dependencies {
+        compile ('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
+            transitive = true;
+        }
+    }
+```
 
 
 Usage
