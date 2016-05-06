@@ -12,6 +12,8 @@ import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
@@ -110,7 +112,17 @@ public class MaterialLoginView extends FrameLayout {
         registerFab.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                animateRegister();
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    animateRegister();
+                } else {
+                    //There's a bug in support implementation of FAB, so we firing animation with little delay so it won't be override by Android
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            animateRegister();
+                        }
+                    }, 100);
+                }
             }
         });
 
