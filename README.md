@@ -10,14 +10,14 @@ Download
 
 Grab via Gradle:
 ```groovy
-compile 'com.github.shem8:material-login:1.3.0'
+compile 'com.github.shem8:material-login:1.4.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.github.shem8</groupId>
   <artifactId>material-login</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
 </dependency>
 ```
 
@@ -95,7 +95,7 @@ You can change the view colors by override it in you colors.xml:
     <color name="material_login_register_error_color">#600002</color>
 ```
 
-You can also change texts and the fab icon by setting LoginView attributes:
+You can also customize the view by setting LoginView attributes:
 
 |Attribute name | Default value|
 |-------------- | -------------|
@@ -111,6 +111,7 @@ You can also change texts and the fab icon by setting LoginView attributes:
 |registerActionText | NEXT|
 |registerTextColor | #000000|
 |registerIcon | ![](https://github.com/google/material-design-icons/blob/master/content/drawable-mdpi/ic_add_black_24dp.png)|
+|registerEnabled | true|
 
 
 
