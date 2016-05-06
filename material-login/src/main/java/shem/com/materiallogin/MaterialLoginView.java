@@ -184,6 +184,10 @@ public class MaterialLoginView extends FrameLayout {
 
             registerFab.setImageResource(
                     a.getResourceId(R.styleable.MaterialLoginView_registerIcon, R.drawable.ic_add_white_24dp));
+
+            boolean enabled = a.getBoolean(R.styleable.MaterialLoginView_registerEnabled, true);
+            registerFab.setVisibility(enabled ? View.VISIBLE : View.GONE);
+
         } finally {
             a.recycle();
         }
