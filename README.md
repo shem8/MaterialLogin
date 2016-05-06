@@ -10,14 +10,14 @@ Download
 
 Grab via Gradle:
 ```groovy
-compile 'com.github.shem8:material-login:1.3.0'
+compile 'com.github.shem8:material-login:1.4.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.github.shem8</groupId>
   <artifactId>material-login</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0</version>
 </dependency>
 ```
 
