@@ -20,5 +20,6 @@
         app:registerPasswordHint="First name"
         app:registerRepeatPasswordHint="Last name"
         app:registerTextColor="@color/colorAccent"
-        app:registerTitle="Join us" />
+        app:registerTitle="Join us"
+        app:registerEnabled="false"/>
 </FrameLayout>

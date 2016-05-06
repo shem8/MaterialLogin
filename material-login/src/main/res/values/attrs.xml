@@ -15,5 +15,7 @@
         <attr name="registerActionText" format="string" />
         <attr name="registerTextColor" format="reference" />
         <attr name="registerIcon" format="reference" />
+
+        <attr name="registerEnabled" format="boolean" />
     </declare-styleable>
 </resources>
