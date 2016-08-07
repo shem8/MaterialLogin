@@ -81,7 +81,7 @@ You can also fork the project and see the example app.
 
 
 
-Cusomize
+Customize
 --------
 
 ![](art/custom.gif)
