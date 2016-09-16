@@ -34,7 +34,7 @@ import io.codetail.animation.ViewAnimationUtils;
 public class DefaultLoginView extends FrameLayout {
 
     public interface DefaultLoginViewListener {
-        void onLogin(String loginUser, String loginPass);
+        void onLogin(TextInputLayout loginUser, TextInputLayout loginPass);
     }
 
     private DefaultLoginViewListener listener;
@@ -77,8 +77,7 @@ public class DefaultLoginView extends FrameLayout {
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.onLogin(loginUser.getEditText().getText().toString(),
-                            loginPass.getEditText().getText().toString());
+                    listener.onLogin(loginUser, loginPass);
                 }
             }
         });

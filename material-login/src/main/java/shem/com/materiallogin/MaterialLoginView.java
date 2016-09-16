@@ -43,6 +43,8 @@ public class MaterialLoginView extends FrameLayout {
     private View registerCancel;
     private ViewGroup loginCard;
     private ViewGroup registerCard;
+    private View registerView;
+    private View loginView;
 
     public MaterialLoginView(Context context) {
         this(context, null);
@@ -68,9 +70,7 @@ public class MaterialLoginView extends FrameLayout {
         inflater.inflate(R.layout.login_view, this, true);
 
         loginCard = (ViewGroup) findViewById(R.id.login_card);
-
         registerCard = (ViewGroup) findViewById(R.id.register_card);
-
         registerFab = (FloatingActionButton) findViewById(R.id.register_fab);
 
         registerFab.setOnClickListener(new OnClickListener() {
@@ -97,12 +97,13 @@ public class MaterialLoginView extends FrameLayout {
                 0, 0);
 
         try {
-            int loginViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.login_layout);
+            int loginViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.default_login_view);
             inflate(getContext(), loginViewId, loginCard);
+            loginView = loginCard.getChildAt(0);
 
-            int registerViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.register_layout);
+            int registerViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.default_register_view);
             inflate(getContext(), registerViewId, registerCard);
-            View registerView = registerCard.getChildAt(0);
+            registerView = registerCard.getChildAt(0);
             if (registerView instanceof RegisterView) {
                 registerCancel = ((RegisterView) registerView).getCancelRegisterView();
             }else if (registerView.findViewById(R.id.register_cancel) != null) {
@@ -209,6 +210,14 @@ public class MaterialLoginView extends FrameLayout {
             }
         });
         animator.start();
+    }
+
+    public View getLoginView() {
+        return loginView;
+    }
+
+    public View getRegisterView() {
+        return registerView;
     }
 
     class FabAnimation extends Animation {

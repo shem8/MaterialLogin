@@ -18,7 +18,7 @@ import android.widget.TextView;
 public class DefaultRegisterView extends FrameLayout implements RegisterView {
 
     public interface DefaultRegisterViewListener {
-        void onRegister(String registerUser, String registerPass, String registerPassRep);
+        void onRegister(TextInputLayout registerUser, TextInputLayout registerPass, TextInputLayout registerPassRep);
     }
 
     private DefaultRegisterViewListener listener;
@@ -64,9 +64,9 @@ public class DefaultRegisterView extends FrameLayout implements RegisterView {
         registerBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onRegister(registerUser.getEditText().getText().toString(),
-                        registerPass.getEditText().getText().toString(),
-                        registerPassRep.getEditText().getText().toString());
+                listener.onRegister(registerUser,
+                        registerPass,
+                        registerPassRep);
             }
         });
 
