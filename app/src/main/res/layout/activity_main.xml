@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Default"
         android:onClick="defaultView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:padding="10dp" />
 
     <View
@@ -23,7 +23,21 @@
         android:layout_height="wrap_content"
         android:text="Customized"
         android:onClick="customizedView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:padding="10dp"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom views"
+        android:onClick="customViews"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:padding="10dp"/>
 
     <View

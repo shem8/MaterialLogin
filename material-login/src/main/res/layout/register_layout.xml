@@ -28,8 +28,7 @@
                 android:id="@+id/register_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:rotation="45"
-                android:src="@drawable/ic_add_white_24dp"
+                android:src="@drawable/ic_clear"
                 android:tint="@color/material_login_login_color" />
         </LinearLayout>
 

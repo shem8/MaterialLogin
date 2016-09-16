@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void customizedView(View view) {
         startActivity(new Intent(this, CustomizeActivity.class));
     }
+
+    public void customViews(View view) {
+        startActivity(new Intent(this, CustomViewsActivity.class));
+    }
 }

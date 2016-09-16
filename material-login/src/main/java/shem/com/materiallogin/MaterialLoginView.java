@@ -195,7 +195,7 @@ public class MaterialLoginView extends FrameLayout {
                 registerCancel.setScaleX(1F);
                 registerCancel.setScaleY(1F);
                 registerCancel.setAlpha(1F);
-                registerCancel.setRotation(45F);
+                registerCancel.setRotation(0F);
                 registerFab.setVisibility(View.VISIBLE);
 
                 ObjectAnimator animX = ObjectAnimator.ofFloat(registerFab, "scaleX", 0F, 1F);

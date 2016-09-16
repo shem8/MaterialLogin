@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3E3E3">
+
+    <shem.com.materiallogin.MaterialLoginView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:registerIcon="@drawable/ic_person_add_white_24dp"
+        app:loginView="@layout/custom_view_login"
+        app:registerView="@layout/custom_view_register"
+        />
+</FrameLayout>
