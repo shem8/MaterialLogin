@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.Path;
@@ -17,6 +18,7 @@ import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewGroupCompat;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
@@ -135,9 +137,15 @@ public class MaterialLoginView extends FrameLayout {
 
     private void animateRegister() {
         Path path = new Path();
-        RectF rect = new RectF(-241F, -40F, 41F, 242F);
-        path.addArc(rect, -45F, 180F);
-        path.lineTo(-0F, -50F);
+        if (isRTL()) {
+            RectF rect = new RectF(-41F, -40F, 241F, 242F);
+            path.addArc(rect, -135F, -180F);
+            path.lineTo(200F, -50F);
+        } else {
+            RectF rect = new RectF(-241F, -40F, 41F, 242F);
+            path.addArc(rect, -45F, 180F);
+            path.lineTo(-0F, -50F);
+        }
         FabAnimation fabAnimation = new FabAnimation(path);
         fabAnimation.setDuration(400);
         fabAnimation.setInterpolator(new AccelerateInterpolator());
@@ -171,6 +179,10 @@ public class MaterialLoginView extends FrameLayout {
         });
 
         registerFab.startAnimation(fabAnimation);
+    }
+
+    private boolean isRTL() {
+        return ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL;
     }
 
     private SupportAnimator getCircularRevealAnimation(View view, int centerX, int centerY, float startRadius, float endRadius) {
