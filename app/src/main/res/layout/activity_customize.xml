@@ -9,17 +9,8 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:loginActionText="LOGIN"
-        app:loginHint="Email"
-        app:loginPasswordHint="Pin code"
-        app:loginTextColor="@color/material_login_register_color"
-        app:loginTitle="Customized login"
-        app:registerActionText="SIGN UP"
-        app:registerHint="Email"
         app:registerIcon="@drawable/ic_person_add_white_24dp"
-        app:registerPasswordHint="First name"
-        app:registerRepeatPasswordHint="Last name"
-        app:registerTextColor="@color/colorAccent"
-        app:registerTitle="Join us"
-        app:registerEnabled="false"/>
+        app:loginView="@layout/custom_login_view"
+        app:registerView="@layout/custom_register_view"
+        />
 </FrameLayout>

@@ -5,6 +5,7 @@
         <attr name="registerIcon" format="reference" />
         <attr name="registerEnabled" format="boolean" />
         <attr name="loginView" format="reference" />
+        <attr name="registerView" format="reference" />
     </declare-styleable>
 
 

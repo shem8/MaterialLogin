@@ -101,7 +101,7 @@ public class MaterialLoginView extends FrameLayout {
             inflate(getContext(), loginViewId, loginCard);
             loginView = loginCard.getChildAt(0);
 
-            int registerViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.default_register_view);
+            int registerViewId = a.getResourceId(R.styleable.MaterialLoginView_registerView, R.layout.default_register_view);
             inflate(getContext(), registerViewId, registerCard);
             registerView = registerCard.getChildAt(0);
             if (registerView instanceof RegisterView) {
