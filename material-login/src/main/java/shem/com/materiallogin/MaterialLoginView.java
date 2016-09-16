@@ -17,16 +17,18 @@ import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewGroupCompat;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 
@@ -35,23 +37,12 @@ import io.codetail.animation.ViewAnimationUtils;
  */
 public class MaterialLoginView extends FrameLayout {
 
-    private MaterialLoginViewListener listener;
+    private static final String TAG = MaterialLoginView.class.getSimpleName();
 
-    private TextView registerBtn;
-    private TextView registerTitle;
-    private TextInputLayout registerUser;
-    private TextInputLayout registerPass;
-    private TextInputLayout registerPassRep;
-    private TextView loginTitle;
-    private TextInputLayout loginUser;
-    private TextInputLayout loginPass;
-    private TextView loginBtn;
     private FloatingActionButton registerFab;
     private View registerCancel;
-    private View loginView;
-    private View loginCard;
-    private View registerView;
-    private View registerCard;
+    private ViewGroup loginCard;
+    private ViewGroup registerCard;
 
     public MaterialLoginView(Context context) {
         this(context, null);
@@ -76,38 +67,11 @@ public class MaterialLoginView extends FrameLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.login_view, this, true);
 
-        loginView = findViewById(R.id.login_window);
-        loginCard = findViewById(R.id.login_card);
-        loginTitle = (TextView) findViewById(R.id.login_title);
-        loginUser = (TextInputLayout) findViewById(R.id.login_user);
-        loginPass = (TextInputLayout) findViewById(R.id.login_pass);
-        loginBtn = (TextView) findViewById(R.id.login_btn);
+        loginCard = (ViewGroup) findViewById(R.id.login_card);
 
-        registerView = findViewById(R.id.register_window);
-        registerCard = findViewById(R.id.register_card);
-        registerTitle = (TextView) findViewById(R.id.register_title);
-        registerUser = (TextInputLayout) findViewById(R.id.register_user);
-        registerPass = (TextInputLayout) findViewById(R.id.register_pass);
-        registerPassRep = (TextInputLayout) findViewById(R.id.register_pass_rep);
-        registerBtn = (TextView) findViewById(R.id.register_btn);
+        registerCard = (ViewGroup) findViewById(R.id.register_card);
 
         registerFab = (FloatingActionButton) findViewById(R.id.register_fab);
-        registerCancel = findViewById(R.id.register_cancel);
-
-
-        registerBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onRegister(registerUser, registerPass, registerPassRep);
-            }
-        });
-
-        loginBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onLogin(loginUser, loginPass);
-            }
-        });
 
         registerFab.setOnClickListener(new OnClickListener() {
             @Override
@@ -126,13 +90,6 @@ public class MaterialLoginView extends FrameLayout {
             }
         });
 
-        registerCancel.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animateLogin();
-            }
-        });
-
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
@@ -140,59 +97,29 @@ public class MaterialLoginView extends FrameLayout {
                 0, 0);
 
         try {
-            String string = a.getString(R.styleable.MaterialLoginView_loginTitle);
-            if (string != null) {
-                loginTitle.setText(string);
+            int loginViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.login_layout);
+            inflate(getContext(), loginViewId, loginCard);
+
+            int registerViewId = a.getResourceId(R.styleable.MaterialLoginView_loginView, R.layout.register_layout);
+            inflate(getContext(), registerViewId, registerCard);
+            View registerView = registerCard.getChildAt(0);
+            if (registerView instanceof RegisterView) {
+                registerCancel = ((RegisterView) registerView).getCancelRegisterView();
+            }else if (registerView.findViewById(R.id.register_cancel) != null) {
+                registerCancel = registerView.findViewById(R.id.register_cancel);
             }
 
-            string = a.getString(R.styleable.MaterialLoginView_loginHint);
-            if (string != null) {
-                loginUser.setHint(string);
+            if (registerCancel != null) {
+                registerCancel.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        animateLogin();
+                    }
+                });
+            } else {
+                Log.d(TAG, "The register view should implement RegisterView interface or set a view with register_cancel id");
             }
 
-            string = a.getString(R.styleable.MaterialLoginView_loginPasswordHint);
-            if (string != null) {
-                loginPass.setHint(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_loginActionText);
-            if (string != null) {
-                loginBtn.setText(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_registerTitle);
-            if (string != null) {
-                registerTitle.setText(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_registerHint);
-            if (string != null) {
-                registerUser.setHint(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_registerPasswordHint);
-            if (string != null) {
-                registerPass.setHint(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_registerRepeatPasswordHint);
-            if (string != null) {
-                registerPassRep.setHint(string);
-            }
-
-            string = a.getString(R.styleable.MaterialLoginView_registerActionText);
-            if (string != null) {
-                registerBtn.setText(string);
-            }
-
-            int color = a.getColor(R.styleable.MaterialLoginView_loginTextColor, ContextCompat.getColor(getContext(), R.color.material_login_login_text_color));
-            loginUser.getEditText().setTextColor(color);
-            loginPass.getEditText().setTextColor(color);
-
-            color = a.getColor(R.styleable.MaterialLoginView_registerTextColor, ContextCompat.getColor(getContext(), R.color.material_login_register_text_color));
-            registerUser.getEditText().setTextColor(color);
-            registerPass.getEditText().setTextColor(color);
-            registerPassRep.getEditText().setTextColor(color);
 
             registerFab.setImageResource(
                     a.getResourceId(R.styleable.MaterialLoginView_registerIcon, R.drawable.ic_add_white_24dp));
@@ -217,16 +144,16 @@ public class MaterialLoginView extends FrameLayout {
         fabAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                SupportAnimator animator = getCircularRevealAnimation(registerCard, registerView.getWidth() - 250, 400, 0f, 2F * registerView.getHeight());
+                SupportAnimator animator = getCircularRevealAnimation(registerCard, registerCard.getWidth() - 250, 400, 0f, 2F * registerCard.getHeight());
                 animator.setDuration(700);
                 animator.setStartDelay(200);
                 animator.addListener(new SupportAnimator.SimpleAnimatorListener() {
                     public void onAnimationStart() {
-                        registerView.setVisibility(View.VISIBLE);
+                        registerCard.setVisibility(View.VISIBLE);
                     }
 
                     public void onAnimationEnd() {
-                        loginView.setVisibility(View.GONE);
+                        loginCard.setVisibility(View.GONE);
                     }
                 });
                 animator.start();
@@ -254,16 +181,16 @@ public class MaterialLoginView extends FrameLayout {
     private void animateLogin() {
         registerCancel.animate().scaleX(0F).scaleY(0F).alpha(0F).rotation(90F).
                 setDuration(200).setInterpolator(new AccelerateInterpolator()).start();
-        SupportAnimator animator = getCircularRevealAnimation(registerCard, registerView.getWidth() / 2, registerView.getHeight() / 2, 1f * registerView.getHeight(), 0F);
+        SupportAnimator animator = getCircularRevealAnimation(registerCard, registerCard.getWidth() / 2, registerCard.getHeight() / 2, 1f * registerCard.getHeight(), 0F);
         animator.setDuration(500);
         animator.setStartDelay(100);
         animator.addListener(new SupportAnimator.SimpleAnimatorListener() {
             public void onAnimationStart() {
-                loginView.setVisibility(View.VISIBLE);
+                loginCard.setVisibility(View.VISIBLE);
             }
 
             public void onAnimationEnd() {
-                registerView.setVisibility(View.GONE);
+                registerCard.setVisibility(View.GONE);
                 registerCancel.setScaleX(1F);
                 registerCancel.setScaleY(1F);
                 registerCancel.setAlpha(1F);
@@ -282,10 +209,6 @@ public class MaterialLoginView extends FrameLayout {
             }
         });
         animator.start();
-    }
-
-    public void setListener(MaterialLoginViewListener listener) {
-        this.listener = listener;
     }
 
     class FabAnimation extends Animation {

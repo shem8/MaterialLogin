@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<io.codetail.widget.RevealFrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:showIn="@layout/login_view"
-    android:layout_gravity="center">
-    <android.support.v7.widget.CardView
-        android:id="@+id/login_card"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="10dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/material_login_login_color"
         android:orientation="vertical"
@@ -78,6 +65,4 @@
                 android:textColor="@color/material_login_register_color"
                 android:textSize="20sp" />
         </FrameLayout>
-    </LinearLayout>
-</android.support.v7.widget.CardView>
-</io.codetail.widget.RevealFrameLayout>
+</LinearLayout>
