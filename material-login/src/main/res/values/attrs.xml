@@ -2,20 +2,27 @@
 <resources>
 
     <declare-styleable name="MaterialLoginView">
+        <attr name="registerIcon" format="reference" />
+        <attr name="registerEnabled" format="boolean" />
+        <attr name="loginView" format="reference" />
+        <attr name="registerView" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="DefaultLoginView">
         <attr name="loginTitle" format="string" />
         <attr name="loginHint" format="string" />
         <attr name="loginPasswordHint" format="string" />
         <attr name="loginActionText" format="string" />
         <attr name="loginTextColor" format="reference" />
+    </declare-styleable>
 
+    <declare-styleable name="DefaultRegisterView">
         <attr name="registerTitle" format="string" />
         <attr name="registerHint" format="string" />
         <attr name="registerPasswordHint" format="string" />
         <attr name="registerRepeatPasswordHint" format="string" />
         <attr name="registerActionText" format="string" />
         <attr name="registerTextColor" format="reference" />
-        <attr name="registerIcon" format="reference" />
-
-        <attr name="registerEnabled" format="boolean" />
     </declare-styleable>
 </resources>
