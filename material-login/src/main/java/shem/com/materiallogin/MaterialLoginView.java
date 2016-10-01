@@ -153,7 +153,7 @@ public class MaterialLoginView extends FrameLayout {
         fabAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                SupportAnimator animator = getCircularRevealAnimation(registerCard, registerCard.getWidth() - 250, 400, 0f, 2F * registerCard.getHeight());
+                SupportAnimator animator = getCircularRevealAnimation(registerCard, isRTL() ? 250 : registerCard.getWidth() - 250, 400, 0f, 2F * registerCard.getHeight());
                 animator.setDuration(700);
                 animator.setStartDelay(200);
                 animator.addListener(new SupportAnimator.SimpleAnimatorListener() {
