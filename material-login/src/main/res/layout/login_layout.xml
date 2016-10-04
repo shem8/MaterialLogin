@@ -25,11 +25,12 @@
             app:errorTextAppearance="@style/MaterialLoginTheme.TextAppearanceLoginError"
             app:theme="@style/MaterialLoginTheme.TextAppearanceLogin">
 
-            <EditText
+            <AutoCompleteTextView
+                android:id="@+id/login_user_autocomplete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
-                android:inputType="textVisiblePassword|textNoSuggestions"
+                android:inputType="textEmailAddress"
                 android:textSize="20sp" />
         </android.support.design.widget.TextInputLayout>
 
