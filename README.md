@@ -10,7 +10,7 @@ Download
 
 Grab via Gradle:
 ```groovy
-compile 'com.github.shem8:material-login:2.1.0'
+compile 'com.github.shem8:material-login:2.1.1'
 ```
 or Maven:
 ```xml
