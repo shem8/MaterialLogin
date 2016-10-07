@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/shem8/MaterialLogin'
     gitUrl = 'https://github.com/shem8/MaterialLogin.git'
 
-    libraryVersion = '2.1.0'
+    libraryVersion = '2.1.1'
 
     developerId = 'shem8'
     developerName = 'Shem Magnezi'
