@@ -25,7 +25,6 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 
 /**

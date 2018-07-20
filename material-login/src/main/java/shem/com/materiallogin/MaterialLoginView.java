@@ -31,7 +31,6 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
 
 /**
@@ -153,16 +152,26 @@ public class MaterialLoginView extends FrameLayout {
         fabAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                SupportAnimator animator = getCircularRevealAnimation(registerCard, isRTL() ? 250 : registerCard.getWidth() - 250, 400, 0f, 2F * registerCard.getHeight());
+                Animator animator = getCircularRevealAnimation(registerCard, isRTL() ? 250 : registerCard.getWidth() - 250, 400, 0f, 2F * registerCard.getHeight());
                 animator.setDuration(700);
                 animator.setStartDelay(200);
-                animator.addListener(new SupportAnimator.SimpleAnimatorListener() {
-                    public void onAnimationStart() {
+                animator.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
                         registerCard.setVisibility(View.VISIBLE);
                     }
 
-                    public void onAnimationEnd() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
                         loginCard.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
                     }
                 });
                 animator.start();
@@ -185,7 +194,7 @@ public class MaterialLoginView extends FrameLayout {
         return ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL;
     }
 
-    private SupportAnimator getCircularRevealAnimation(View view, int centerX, int centerY, float startRadius, float endRadius) {
+    private Animator getCircularRevealAnimation(View view, int centerX, int centerY, float startRadius, float endRadius) {
         return ViewAnimationUtils.createCircularReveal(
                 view, centerX, centerY, startRadius, endRadius);
     }
@@ -194,15 +203,17 @@ public class MaterialLoginView extends FrameLayout {
     private void animateLogin() {
         registerCancel.animate().scaleX(0F).scaleY(0F).alpha(0F).rotation(90F).
                 setDuration(200).setInterpolator(new AccelerateInterpolator()).start();
-        SupportAnimator animator = getCircularRevealAnimation(registerCard, registerCard.getWidth() / 2, registerCard.getHeight() / 2, 1f * registerCard.getHeight(), 0F);
+        Animator animator = getCircularRevealAnimation(registerCard, registerCard.getWidth() / 2, registerCard.getHeight() / 2, 1f * registerCard.getHeight(), 0F);
         animator.setDuration(500);
         animator.setStartDelay(100);
-        animator.addListener(new SupportAnimator.SimpleAnimatorListener() {
-            public void onAnimationStart() {
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
                 loginCard.setVisibility(View.VISIBLE);
             }
 
-            public void onAnimationEnd() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
                 registerCard.setVisibility(View.GONE);
                 registerCancel.setScaleX(1F);
                 registerCancel.setScaleY(1F);
@@ -219,6 +230,16 @@ public class MaterialLoginView extends FrameLayout {
                 animator.setInterpolator(new AccelerateInterpolator());
                 animator.setDuration(200);
                 animator.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
             }
         });
         animator.start();
