@@ -17,7 +17,7 @@ or Maven:
 <dependency>
   <groupId>com.github.shem8</groupId>
   <artifactId>material-login</artifactId>
-  <version>2.1.0</version>
+  <version>2.2.0</version>
 </dependency>
 ```
 
@@ -35,7 +35,7 @@ then add a library dependency
 
 ```groovy
     dependencies {
-        compile ('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
+        compile ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
             transitive = true;
         }
     }
